@@ -1,26 +1,168 @@
 @import "tailwindcss";
 
 :root {
+  /* Light Theme */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a;
+  --card: #f8fafc;
+  --card-foreground: #0f172a;
+  --primary: #154492;
+  --primary-foreground: #ffffff;
+  --accent: #f2ae1b;
+  --accent-foreground: #154492;
+  --border: #e2e8f0;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+}
+
+.dark {
+  /* Dark Theme */
+  --background: #0f172a;
+  /* Deep charcoal blue */
+  --foreground: #f8fafc;
+  --card: #154492;
+  /* The requested blue for cards/surface */
+  --card-foreground: #ffffff;
+  --primary: #f2ae1b;
+  /* Gold as primary in dark mode for pop */
+  --primary-foreground: #154492;
+  --accent: #f2ae1b;
+  /* The requested gold for highlights */
+  --accent-foreground: #154492;
+  --border: #1e3a8a;
+  --muted: #020617;
+  --muted-foreground: #94a3b8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Global Typography Styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--foreground);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+p,
+span,
+li,
+dt,
+dd {
+  color: var(--muted-foreground);
+}
+
+strong,
+b {
+  color: var(--foreground);
+  font-weight: 600;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent);
+}
+
+/* Semantic utility overrides to ensure global consistency */
+.text-foreground {
+  color: var(--foreground) !important;
+}
+
+.text-muted-foreground {
+  color: var(--muted-foreground) !important;
+}
+
+.text-primary {
+  color: var(--primary) !important;
+}
+
+.text-accent {
+  color: var(--accent) !important;
+}
+
+.bg-background {
+  background-color: var(--background) !important;
+}
+
+.bg-card {
+  background-color: var(--card) !important;
+}
+
+.bg-primary {
+  background-color: var(--primary) !important;
+}
+
+.bg-accent {
+  background-color: var(--accent) !important;
+}
+
+.bg-muted {
+  background-color: var(--muted) !important;
+}
+
+.border-border {
+  border-color: var(--border) !important;
+}
+
+.border-primary {
+  border-color: var(--primary) !important;
+}
+
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoom-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+.zoom-in {
+  animation: zoom-in 0.3s ease-out;
 }
