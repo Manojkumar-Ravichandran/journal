@@ -46,7 +46,7 @@ const TradeDetail: React.FC<{ tradeId: string, onBack: () => void }> = ({ tradeI
             <header className="flex flex-col md:flex-row md:items-center gap-6 bg-card border border-border p-8 rounded-[2.5rem] shadow-xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-3xl rounded-full translate-x-32 -translate-y-32"></div>
 
-                <button onClick={onBack} className="w-12 h-12 flex items-center justify-center hover:bg-muted rounded-2xl transition-all border border-border text-foreground shadow-lg active:scale-90">←</button>
+                <button onClick={onBack} className="w-12 h-12 flex items-center justify-center hover:bg-muted rounded-2xl transition-all border text-foreground shadow-lg active:scale-90">←</button>
 
                 <div className="relative z-10">
                     <div className="flex items-center gap-4">

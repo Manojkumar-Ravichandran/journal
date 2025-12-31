@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { login, register, User } from "../services/authService";
 import { setUser } from "../store/slices/authSlice";
+import { SITE_NAME, SITE_ABBREVIATION } from "../lib/constants";
 
 export default function Login() {
   const [isLogin, setIsLogin] = useState(true);
@@ -54,8 +55,10 @@ export default function Login() {
     <div className="min-h-screen flex items-center justify-center bg-background p-6 transition-colors duration-300">
       <div className="w-full max-w-md bg-card border border-border p-8 rounded-3xl shadow-2xl animate-in zoom-in duration-300">
         <div className="flex flex-col items-center mb-8">
-          <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center font-bold text-2xl text-primary-foreground mb-4">TM</div>
-          <h1 className="text-2xl font-bold tracking-tight text-foreground">TradeMirror</h1>
+          <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center font-bold text-2xl text-primary-foreground mb-4">
+            {SITE_ABBREVIATION}
+          </div>
+          <h1 className="text-2xl font-bold tracking-tight text-foreground">{SITE_NAME}</h1>
           <p className="text-muted-foreground text-sm mt-1">{isLogin ? 'Welcome back, Trader' : 'Start your discipline journey'}</p>
         </div>
 

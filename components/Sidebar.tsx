@@ -2,6 +2,7 @@ import { logout } from '@/app/services/authService';
 import { User } from '@/app/types';
 import React from 'react';
 import ThemeSwitcher from './ThemeSwitcher';
+import { SITE_NAME, SITE_ABBREVIATION } from '@/app/lib/constants';
 
 interface SidebarProps {
     activeTab: string;
@@ -32,10 +33,10 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, user, onLogo
                     onClick={() => setActiveTab('dashboard')}
                 >
                     <div className="w-8 h-8 bg-primary rounded flex items-center justify-center font-bold text-primary-foreground">
-                        TM
+                        {SITE_ABBREVIATION}
                     </div>
                     <h1 className="text-xl font-bold tracking-tight bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-                        TradeMirror
+                        {SITE_NAME}
                     </h1>
                 </div>
 
@@ -46,8 +47,8 @@ const Sidebar: React.FC<SidebarProps> = ({ activeTab, setActiveTab, user, onLogo
                             key={item.id}
                             onClick={() => setActiveTab(item.id)}
                             className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-200 ${activeTab === item.id
-                                    ? 'bg-accent/20 text-accent border border-accent/30 shadow-lg shadow-accent/10'
-                                    : 'text-muted-foreground hover:text-foreground hover:bg-accent/10'
+                                ? 'bg-accent/20 text-accent border border-accent/30 shadow-lg shadow-accent/10'
+                                : 'text-muted-foreground hover:text-foreground hover:bg-accent/10'
                                 }`}
                         >
                             <span>{item.icon}</span>
