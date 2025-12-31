@@ -89,7 +89,7 @@ export default function Dashboard() {
             <h3 className="font-black text-primary text-lg">AI Behavior Signal</h3>
             <span className="text-[10px] bg-accent px-2 py-0.5 rounded-full text-accent-foreground font-black uppercase tracking-widest">Real-time</span>
           </div>
-          <p className="text-muted-foreground mt-2 text-lg italic leading-snug">"{insight}"</p>
+          <p className="text-muted-foreground mt-2 text-lg italic leading-snug">&quot;{insight}&quot;</p>
         </div>
         <button className="bg-muted hover:bg-muted/80 px-6 py-2.5 rounded-xl text-sm font-bold text-foreground border border-border transition-all">Deep Dive</button>
       </div>

@@ -6,6 +6,7 @@ import { usePathname, useRouter } from 'next/navigation';
 import { RootState } from '@/app/store';
 import { logout as logoutAction } from '@/app/store/slices/authSlice';
 import Sidebar from './Sidebar';
+import ChatAssistant from './ChatAssistant';
 
 export default function LayoutShell({ children }: { children: React.ReactNode }) {
     const { user, loading } = useSelector((state: RootState) => state.auth);
@@ -67,6 +68,7 @@ export default function LayoutShell({ children }: { children: React.ReactNode })
                     {children}
                 </div>
             </main>
+            {showSidebar && <ChatAssistant />}
         </div>
     );
 }
